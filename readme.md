@@ -34,3 +34,37 @@
 - Full **CI/CD pipelines** for both Terraform (plan/apply) and application deployments  
 - Consistent **Terraform outputs** to expose ARNs, endpoints, IDs  
 - Enhanced **health checks** (application‑level probes, grace periods)  
+
+
+See **Contacts.http** for example requests.  
+Base URL: `https://1ioqlpagqd.execute-api.eu-west-1.amazonaws.com`
+
+## Application Overview
+
+This is a simple REST API for managing contacts. It uses FastAPI with SQLAlchemy and PostgreSQL as the database. On startup, the database is initialized with sample data if it’s empty.
+
+## Endpoints
+
+| Method | Path                      | Description                        | Request Body     | Response Model            |
+|--------|---------------------------|------------------------------------|------------------|---------------------------|
+| GET    | `/`                       | Health check                       | –                | `{ "status": "OK" }`      |
+| GET    | `/contacts`               | Retrieve all contacts              | –                | `List[ContactResponse]`   |
+| GET    | `/contacts/{contact_id}`  | Retrieve a single contact by ID    | –                | `ContactResponse`         |
+| POST   | `/contacts`               | Create a new contact               | `ContactCreate`  | `ContactResponse`         |
+| PUT    | `/contacts/{contact_id}`  | Update an existing contact         | `ContactCreate`  | `ContactResponse`         |
+| DELETE | `/contacts/{contact_id}`  | Delete a contact                   | –                | `ContactResponse`         |
+
+## Data Models
+
+### ContactCreate
+- `name` (string) – contact’s name  
+- `email` (string) – contact’s email address  
+- `phone` (string) – contact’s phone number  
+
+### ContactResponse
+- `id` (integer)  
+- `name` (string)  
+- `email` (string)  
+- `phone` (string)  
+
+`ContactResponse` includes all fields from `ContactCreate` plus the generated `id`.  
