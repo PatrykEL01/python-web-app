@@ -1,0 +1,25 @@
+### List Contacts
+GET http://localhost:8000/contacts
+
+### Create Contact
+POST http://localhost:8000/contacts
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "email": "test@example.com",
+  "phone": "123456789"
+}
+
+### Update Contact
+PUT http://localhost:8000/contacts/1
+Content-Type: application/json
+
+{
+  "name": "Updated User",
+  "email": "updated@example.com",
+  "phone": "987654321"
+}
+
+### Delete Contact
+DELETE http://localhost:8000/contacts/{{contactId}}
