@@ -10,7 +10,7 @@
 - Application containers listen on **port 8080** and are registered in an NLB target group.  
 - An HTTP API (`aws_apigatewayv2_api`) uses a **VPC Link** to connect to the NLB via private ENIs in the same subnets as ECS.  
 - The API integration is `HTTP_PROXY`, pointing at the NLB’s DNS name on port 8080.  
-- The ECS security group allows ingress **only** from the trusted IP range (`75.2.60.0/24` plus your IP) on ports **8080** and **443**; egress is unrestricted.  
+- The ECS security group allows ingress **only** from the trusted IP range (`75.2.60.0/24` plus my IP) on ports **8080** and **443**; egress is unrestricted.  
 - Terraform remote state is stored in an **S3 backend** with versioning, SSE‑S3 encryption, and a public‑access block.  
 - Logs are sent to CloudWatch Log Group **`/ecs/myapp`**, with log streams auto‑created by ECS.  
 - **RDS** is currently deployed as a single instance to minimize costs.
@@ -33,7 +33,8 @@
 - **AWS Config Rules** (e.g., tag compliance, public resource checks)  
 - Full **CI/CD pipelines** for both Terraform (plan/apply) and application deployments  
 - Consistent **Terraform outputs** to expose ARNs, endpoints, IDs  
-- Enhanced **health checks** (application‑level probes, grace periods)  
+- Enhanced **health checks** (application‑level probes, grace periods)
+- DevSecOps CI/CD implementation like terrascan, chekov
 
 
 See **Contacts.http** for example requests.  
