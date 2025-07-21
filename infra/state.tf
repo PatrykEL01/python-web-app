@@ -9,13 +9,13 @@ resource "aws_dynamodb_table" "terraform_locks" {
     type = "S"
   }
 
-#   tags = var.tags
+  #   tags = var.tags
 }
 
 
 resource "aws_s3_bucket" "terraform_state" {
   bucket = "ecs-project-state-bucket-235"
-#   tags   = var.tags
+  #   tags   = var.tags
 }
 
 resource "aws_s3_bucket_versioning" "state_versioning" {

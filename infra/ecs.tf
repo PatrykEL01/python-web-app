@@ -29,7 +29,7 @@ resource "aws_ecs_cluster" "ecs_cluster" {
     name  = "containerInsights"
     value = "enabled"
   }
-    tags = var.tags
+  tags = var.tags
 }
 
 resource "aws_ecs_task_definition" "my_task" {
@@ -73,7 +73,7 @@ resource "aws_ecs_task_definition" "my_task" {
     }
   ])
   depends_on = [null_resource.create_sm_secret, aws_secretsmanager_secret_version.db_connection_string]
-  tags = var.tags
+  tags       = var.tags
 }
 
 
@@ -98,7 +98,7 @@ resource "aws_ecs_service" "my_service" {
   }
 
   depends_on = [aws_lb_listener.nlb_listener]
-  tags = var.tags
+  tags       = var.tags
 }
 
 resource "aws_cloudwatch_log_group" "ecs_myapp" {

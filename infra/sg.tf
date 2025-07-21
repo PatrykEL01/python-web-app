@@ -25,7 +25,7 @@ resource "aws_security_group" "ecs_sg" {
     ]
   }
 
-    ingress {
+  ingress {
     description = "Allow API GW VPC Link on 8080"
     from_port   = 8080
     to_port     = 8080

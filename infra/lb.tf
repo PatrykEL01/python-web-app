@@ -24,7 +24,7 @@ resource "aws_lb_target_group" "nlb_tg" {
     unhealthy_threshold = 3
     timeout             = 10
   }
-    tags = var.tags
+  tags = var.tags
 
 }
 
@@ -37,5 +37,5 @@ resource "aws_lb_listener" "nlb_listener" {
     type             = "forward"
     target_group_arn = aws_lb_target_group.nlb_tg.arn
   }
-    tags = var.tags
+  tags = var.tags
 }

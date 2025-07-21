@@ -20,13 +20,13 @@ task_role_arn     = "arn:aws:iam::123456789012:role/my-ecs-task-role"
 
 
 # Database Configuration
-db_engine              = "postgres"
-db_engine_version      = "17"
-db_instance_class      = "db.t4g.micro"
-allocated_storage      = 20
-db_indetifier         = "ecs-db"
-db_name                = "mydatabase"
-db_username            = "dbuser"
+db_engine         = "postgres"
+db_engine_version = "17"
+db_instance_class = "db.t4g.micro"
+allocated_storage = 20
+db_indetifier     = "ecs-db"
+db_name           = "mydatabase"
+db_username       = "dbuser"
 
 # Load Balancer Configuration
 lb_internal        = false
