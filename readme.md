@@ -33,7 +33,8 @@
 - **AWS Config Rules** (e.g., tag compliance, public resource checks)  
 - Full **CI/CD pipelines** for both Terraform (plan/apply) and application deployments  
 - Consistent **Terraform outputs** to expose ARNs, endpoints, IDs  
-- Enhanced **health checks** (application‑level probes, grace periods)  
+- Enhanced **health checks** (application‑level probes, grace periods)
+- DevSecOps CI/CD implementation like terrascan, chekov
 
 
 See **Contacts.http** for example requests.  
